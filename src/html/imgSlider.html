@@ -1,0 +1,99 @@
+<HTML>
+<HEAD>
+<SCRIPT TYPE="text/javascript">
+<!--
+var img1 = new Image();
+img1.src = "imgs/ryl-header-1.jpg";
+img1.alt = "RYL Image 1";
+var img2 = new Image();
+img2.src = "imgs/ryl-header-2.jpg";
+img2.alt = "RYL Image 2";
+var img3 = new Image();
+img3.src = "imgs/ryl-header-3.jpg";
+img3.alt = "RYL Image 3";
+var img4 = new Image();
+img4.src = "imgs/ryl-header-4.jpg";
+img4.alt = "RYL Image 4";
+var img5 = new Image();
+img5.src = "imgs/ryl-header-5.jpg";
+img5.alt = "RYL Image 5";
+// -->
+</SCRIPT>
+</HEAD>
+
+<BODY>
+
+<IMG src="imgs/ryl-header-1.jpg" name="slider" ALT="RYL Image"/>
+
+<SCRIPT LANGUAGE="javascript" SRC="js/slideshow.js"> </SCRIPT>
+
+<SCRIPT/>
+<!--
+var i = 0;
+
+//document.write("<br/>START: Image Array:<br/>");
+//document.write(document.images.slider.name+"<br/>");
+//document.write(document.images.slider.src+"<br/>---<br/>");
+//while (document.images[i]) {
+//    document.write(document.images[i].name+"<br/>");
+//    document.write(document.images[i].src+"<br/>");
+//    i++;
+//}
+//document.write("END: Image Array:<br/>");
+
+var step = 1;
+
+function imgSliderOne () {
+
+document.write("<h2>function imgSliderOne</h2>");
+
+document.write("<br/>START: Image Array:<br/>");
+//document.write(document.images.slider.name+"<br/>");
+//document.write(document.images.slider.src+"<br/>---<br/>");
+i=0;
+while (document.images[i]) {
+    document.write(document.images[i].name+"<br/>");
+    document.write(document.images[i].src+"<br/>");
+    i++;
+}
+document.write("END: Image Array:<br/>");
+
+document.write("img1.name: " + img1.name+"<br/>");
+document.write("img1.src: " + img1.src+"<br/>");
+document.write("img2.name: " + img2.name+"<br/>");
+document.write("img2.src: " + img2.src+"<br/>");
+document.write("img3.name: " + img3.name+"<br/>");
+document.write("img3.src: " + img3.src+"<br/>");
+document.write("img4.name: " + img4.name+"<br/>");
+document.write("img4.src: " + img4.src+"<br/>");
+document.write("img5.name: " + img5.name+"<br/>");
+document.write("img5.src: " + img5.src+"<br/>");
+
+        if (!document.images) {
+                return;
+        }
+
+        document.write("step: " + step);
+
+//        if (document.images.slider) {
+                document.images.slider.src = eval("img" + step + ".src");
+//        } else {
+//                document.write("UNDEFINDED: document.images.slider<br/>");
+//        }
+
+        if (step < 5) {
+                step++;
+        } else {
+                step = 1;
+        }
+
+        setTimeout("imgSliderOne()", 3000);
+}
+
+imgSliderOne();
+// -->
+</SCRIPT>
+
+</BODY>
+
+</HTML>

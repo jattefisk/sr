@@ -1,0 +1,7 @@
+CC=cc
+MAKE=make
+
+ARCH=32
+
+CFLAGS=-g -m$(ARCH)
+
