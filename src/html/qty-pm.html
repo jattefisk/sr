@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<style>
+.center {
+	text-align: center;
+}
+
+.qty {
+	width: 40px;
+}
+</style>
+
+<!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+<!-- Qty script -->
+<script>
+jQuery(document).ready(function () {
+	$('.qty-plus').click(function (e) {
+		// prevent default button behavior
+		e.preventDefault();
+
+		// Get the field name
+		field_name = $(this).attr('field');
+
+		// get curent value
+		var current_val = parseInt($('input[name='+field_name+']').val());
+
+		if (!isNaN(current_val)) {
+			$('input[name='+field_name+']').val(current_val + 1);
+		} else {
+			$('input[name='+field_name+']').val(0);
+		}
+	});
+	
+	$('.qty-minus').click(function (e) {
+		// prevent default button behavior
+		e.preventDefault();
+
+		// Get the field name
+		field_name = $(this).attr('field');
+
+		// get curent value
+		var current_val = parseInt($('input[name='+field_name+']').val());
+
+		if (!isNaN(current_val) && current_val > 0) {
+			$('input[name='+field_name+']').val(current_val - 1);
+		} else {
+			$('input[name='+field_name+']').val(0);
+		}
+	});
+});
+</script>
+
+</head>
+<body>
+
+<h1 class="center">Quatity Plus/Minus Reference</h1>
+
+<form class="center">
+	<input type="button" value="-" class="qty-minus" field="my-qty" />
+	<input type="text" name="my-qty" value="0" class="qty center" />
+	<input type="button" value="+" class="qty-plus" field="my-qty" />
+</form>
+
+</body>
+</html>
